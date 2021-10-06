@@ -263,7 +263,22 @@ Node* deltree(Node *tree)
 		return tree;
 }
 
-
+// #####################################################################################################################
+---------------------------------LEVEL ORDER TRAVERSAL------------------------------------------------------------
+void LevelOrder(Node *root)
+{
+	if(root == NULL) return;
+	queue<Node*> Q;
+	Q.push(root);  
+	//while there is at least one discovered node
+	while(!Q.empty()) {
+		Node* current = Q.front();
+		Q.pop(); // removing the element at front
+		cout<<current->data<<" ";
+		if(current->left != NULL) Q.push(current->left);
+		if(current->right != NULL) Q.push(current->right);
+	}
+}
 	
 	
 			
