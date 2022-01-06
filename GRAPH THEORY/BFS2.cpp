@@ -25,24 +25,22 @@ void bfs(int s,vector<int> adj[],bool vis[],int nv)
 { 
   
 	queue<int> queue;
-  
 	queue.push_back(s); 
-  vis[s]=true;
-
+  	vis[s]=true;
 	while(!queue.empty()) 
 	{
-		int curr = queue.front(); 
-		queue.pop_front(); 
-    cout << curr << " ";
+	   int curr = queue.front(); 
+	   queue.pop_front(); 
+   	   cout << curr << " ";
     
-		for (int i=0; i<adj[curr].size(); ++i) 
-		{ 
-			if(vis[adj[curr][i]]==false)
-      {
-        queue.push_back(adj[curr][i]);
-        vis[adj[curr][i]]=true;
-      }
-		}
+	   for (int i=0; i<adj[curr].size(); ++i) 
+	   { 
+		if(vis[adj[curr][i]]==false)
+      		{
+        	     queue.push_back(adj[curr][i]);
+       		     vis[adj[curr][i]]=true;
+      		}
+	   }
 	} 
 } 
   
