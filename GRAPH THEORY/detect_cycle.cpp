@@ -118,7 +118,6 @@ bool dfs(vector<int> adj[], vector<bool> visited, int curr)
   
     for(int i=0;i<adj[curr].size();++i)
     {
-        FLAG = ;
         if(dfs(adj, visited, adj[curr][i]))
             return true;
     }
