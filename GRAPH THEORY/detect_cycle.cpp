@@ -106,3 +106,37 @@ bool dfs(vector<int> adj[],vector<bool> &vis,vector<bool> &order,int u)
         return false;
         // code here
     }
+// ****************************************************************************************************************
+// detect cycle in a directed graph
+
+bool dfs(vector<int> adj[], vector<bool> visited, int curr)
+{
+    if(visited[curr]==true)
+        return true;
+    
+    visited[curr] = true;
+  
+    for(int i=0;i<adj[curr].size();++i)
+    {
+        FLAG = ;
+        if(dfs(adj, visited, adj[curr][i]))
+            return true;
+    }
+    return false;
+}
+
+bool isCyclic(int V, vector<int> adj[])
+{
+   vector<bool> visited(V,false);
+   for(int i=0;i<V;++i)
+   {
+           visited[i] = true;
+           for(int j=0;j<adj[i].size();++j)
+           {
+               if(dfs(adj,visited,adj[i][j]))
+                   return true;
+           }
+           visited[i] = false;
+   }
+   return false;
+}
