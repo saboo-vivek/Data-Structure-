@@ -1,4 +1,4 @@
-// Floyd warshall algo
+// Floyd warshall algo for all path shortest path
 
 vector<vector<int>> dis(n, vector(n,10001));
        
