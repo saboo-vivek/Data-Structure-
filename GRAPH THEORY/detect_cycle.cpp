@@ -44,8 +44,7 @@
         {
             if(!vis[i])
             {
-                bool c=dfs(adj,vis,i,u);
-                if(c)
+                if(dfs(adj,vis,i,u))
                 return true;
             }
             else if(i!=par)
@@ -61,8 +60,7 @@
         {
             if(!vis[i])
             {
-                bool c=dfs(adj,vis,i,-1);
-                if(c==true)
+                if(dfs(adj,vis,i,-1))
                 return true;
             }
         }
