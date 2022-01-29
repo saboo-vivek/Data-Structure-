@@ -1,3 +1,14 @@
+ListNode *ptr=head,*prev=NULL,*nextnode;
+while(ptr)
+{
+	nextnode=ptr->next;
+	ptr->next=prev;
+	prev=ptr;
+	ptr=nextnode;
+}
+	
+	
+// *****************************************************************************************************************************
 #include<iostream>
 #include<cstdio>
 #include<cstdlib>
