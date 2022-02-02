@@ -67,4 +67,32 @@ void Graph::shortestPath(int src)
             }
         }
     }
+       
+//        ********************************************CODE*************************************************************
+       
+                                          vector<int> dijkstra(int V, vector<vector<int>> adj[], int S)
+                                              {
+                                                  priority_queue< pair<int,int> , vector<pair<int,int>> ,greater<pair<int,int>> > pq;
+
+                                                  vector<int> dis(V,INT_MAX);
+                                                  dis[S]=0;
+
+                                                  pq.push({dis[S],S});
+                                                  while(!pq.empty())
+                                                  {
+                                                      int u=pq.top().second;
+                                                      pq.pop();
+                                                      for(auto i:adj[u])
+                                                      {
+                                                          int v=i[0];
+                                                          int weight=i[1];
+                                                          if(dis[v]>dis[u]+weight)
+                                                          {
+                                                              dis[v]=dis[u]+weight;
+                                                              pq.push({dis[v],v});
+                                                          }
+                                                      }
+                                                  }
+                                                  return dis;
+                                              }
 // **********************************************************************************************************************************
