@@ -16,7 +16,8 @@
 
 // *************************************************************************************
 
-// topological sort
+// topological sort only for DAG
+// lower degree comes first then higher
 
     vector<int> topoSort(int V, vector<int> adj[]) 
     {
